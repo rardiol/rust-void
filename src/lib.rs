@@ -11,6 +11,9 @@
 //! extra functionality to `Result<T, Void>` and `Result<Void, E>`.
 //!
 
+#[macro_use]
+extern crate serde_derive;
+
 #[cfg(not(feature = "std"))]
 mod coreprovider {
     extern crate core;
@@ -25,7 +28,7 @@ mod coreprovider {
 use coreprovider::*;
 
 /// The empty type for cases which can't occur.
-#[derive(Copy)]
+#[derive(Copy, Serialize, Deserialize)]
 pub enum Void {}
 
 impl Clone for Void {
