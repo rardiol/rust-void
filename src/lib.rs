@@ -28,7 +28,7 @@ mod coreprovider {
 use coreprovider::*;
 
 /// The empty type for cases which can't occur.
-#[derive(Copy, Serialize, Deserialize)]
+#[derive(Copy, Hash, Serialize, Deserialize)]
 pub enum Void {}
 
 impl Clone for Void {
